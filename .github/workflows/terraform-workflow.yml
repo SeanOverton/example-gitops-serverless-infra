@@ -1,0 +1,44 @@
+name: "Terraform Workflow"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  terraform-workflow:
+    name: "Terraform Workflow"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Terraform init
+        shell: bash
+        run: terraform init
+
+      - name: Terraform format
+        shell: bash
+        run: terraform fmt
+
+      - name: Terraform validate 
+        shell: bash
+        run: terraform validate
+
+      - name: Terraform plan
+        shell: bash
+        id: tf-plan
+        run: |
+          terraform plan -var-file="config.tfvars" -out "tf-plan"
+
+      - name: Terraform apply
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        id: tf-apply
+        run: |
+          terraform apply "tf-plan"
