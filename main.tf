@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "CHANGE THIS-tfstate"
+    bucket = "platformbucketexample"
     key    = "terraform.tfstate"
     region = "ap-southeast-2"
   }
