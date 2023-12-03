@@ -1,8 +1,8 @@
-# Example Platform engineering repo for building serverless infra
+# Example Gitops repo for building serverless infra
 A terraform repository that allows for self-service via code for developers to create a serverless AWS API that uses a single API gateway with lambda functions at various endpoints. It supports authorization via cognito user pools and by default supports python3.10 endpoints.
 
-## A hands-on introduction to Platform engineeringA Practical Introduction to Platform Engineering: 
-Follow along here: 
+## A Practical Introduction to GitOps: 
+Follow along here: (coming soon)
 
 ## Getting started
 1. Clone `git clone https://github.com/SeanOverton/example-platform-eng-serverless-infra.git`
