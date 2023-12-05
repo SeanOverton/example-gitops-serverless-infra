@@ -4,7 +4,7 @@
 A terraform repository that allows for self-service via code for developers to create a serverless AWS API that uses a single API gateway with lambda functions at various endpoints. It supports authorization via cognito user pools and by default supports python3.10 endpoints.
 
 ## A Practical Introduction to GitOps: 
-Follow along here: (coming soon)
+Follow along here: https://dev.to/s3an_0vert0n/a-practical-introduction-to-gitops-2eao
 
 ## Getting started
 1. Clone `git clone https://github.com/SeanOverton/example-platform-eng-serverless-infra.git`
